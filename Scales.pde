@@ -58,6 +58,7 @@ void eyelid(int x, int y){
 void setup() {
   size(750, 750);
   background(167, 167, 167);
+  noLoop();
 }
 
 void draw () {
@@ -77,6 +78,7 @@ void draw () {
       }
   }
 }
+
 
 
 
