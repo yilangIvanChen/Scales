@@ -1,32 +1,52 @@
 void setup() {
-  size(500, 500);
-  background(200,200,255);
-  noLoop(); //stops the draw() function from repeating
+  size(750, 750);
+  background(80,50,50);
+  //noLoop(); //stops the draw() function from repeating
 }
-int ovalRed = 255;
-void draw() {
-  for (int y = 0; y <= 510; y+=30){
-    for (int x = 0; x <= 510; x+= 30)
-      scale(x,y);
-    for (int x = 0; x <= 510; x+=30)
-      scaleTwo(x,y,ovalRed);
+void draw() 
+{
+  int x = 0;
+  int y = 0;
+  for (y = 0; y <= 800; y+=50){
+    for (x = 0; x <= 800; x+= 105){
+      eye(x+10,y);    
+  funcBlink(x,y);
+    }
   }
 }
-void scale(int x, int y) {//individual scales
-  fill(0,0,255);
-  beginShape();
-  curveVertex(x+15,y);
-  curveVertex(x+15,y);
-  curveVertex(x,y+15);
-  curveVertex(x-15,y);
-  curveVertex(x,y-15);
-  curveVertex(x+15,y);
-  curveVertex(x+15,y);
-  endShape();
-  fill(0,150,150);
-  ellipse(x,y,15,15);
+void funcBlink(int x, int y){
+  int blink = (int)(Math.random() * 40 + 1);
+  if (blink <= 2)
+    eyelid(x+10,y);
+  delay((int)(Math.random() * 30 + 1));
 }
-void scaleTwo(int x,int y, int ovalRed){//individual scales pt2
-  fill(ovalRed,0,0);
-  ellipse(x+15,y+15,10,14);
+void eye(int x, int y){
+  //sclera
+  strokeWeight(2.5);
+  fill(100,20,20);
+  beginShape();
+  vertex(x-50, y);
+  quadraticVertex(x, y-40, x+50, y);
+  quadraticVertex(x, y+40, x-50, y);
+  endShape();
+  //pupil
+  int diam = 0;
+  float r = 255;
+  noFill();
+  while(diam < 30){
+  stroke(r,r,r);
+  ellipse(x,y,diam,diam);
+  diam++;
+  r-=255/21.0;
+  }
+}
+
+void eyelid(int x, int y){
+   strokeWeight(2.5);
+   fill(50,70,60);
+   beginShape();
+   vertex(x-50, y);
+   quadraticVertex(x, y-40, x+50, y);
+   quadraticVertex(x, y+40, x-50, y);
+   endShape();
 }
