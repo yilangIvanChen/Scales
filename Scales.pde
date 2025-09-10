@@ -64,7 +64,8 @@ void setup() {
 void draw () {
   for(x = 0; x <= 400; x += 10) {
     for (y = 0; y <= 400; y += 20) {
-      ellipse(x, y, 10, 10)
+      ellipse(x, y, 10, 10);
     }
   }
 }
+
