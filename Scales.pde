@@ -64,6 +64,10 @@ void setup() {
 void draw () {
   int x = 0;
   int y = 0;
+  fill(0,0,255);
+  ellipse(250,250,100,100);
+  fill(0,250,0);
+  ellipse(250,-250,100,100);
   for (y = 0; y <= 800; y+=50){
     for (x = 0; x <= 800; x+= 105){
       fill(255,0,0);
@@ -78,6 +82,7 @@ void draw () {
       }
   }
 }
+
 
 
 
