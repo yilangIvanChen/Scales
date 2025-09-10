@@ -1,5 +1,5 @@
 void setup() {
-  size(750, 750);
+  createCanvas(750, 750);
   background(80,50,50);
   //noLoop(); //stops the draw() function from repeating
 }
@@ -15,10 +15,9 @@ void draw()
   }
 }
 void funcBlink(int x, int y){
-  int blink = (int)(Math.random() * 40 + 1);
+  int blink = int(random(1,41));
   if (blink <= 2)
     eyelid(x+10,y);
-  delay((int)(Math.random() * 30 + 1));
 }
 void eye(int x, int y){
   //sclera
@@ -28,7 +27,7 @@ void eye(int x, int y){
   vertex(x-50, y);
   quadraticVertex(x, y-40, x+50, y);
   quadraticVertex(x, y+40, x-50, y);
-  endShape();
+  endShape(CLOSE);
   //pupil
   int diam = 0;
   float r = 255;
@@ -48,6 +47,7 @@ void eyelid(int x, int y){
    vertex(x-50, y);
    quadraticVertex(x, y-40, x+50, y);
    quadraticVertex(x, y+40, x-50, y);
-   endShape();
+   endShape(CLOSE);
 }
+
 
