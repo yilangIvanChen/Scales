@@ -1,7 +1,7 @@
 void setup() {
   size(750, 750);
   background(80,50,50);
-  //noLoop(); //stops the draw() function from repeating
+  noLoop(); //stops the draw() function from repeating
 }
 void draw() 
 {
@@ -49,6 +49,7 @@ void eyelid(int x, int y){
    quadraticVertex(x, y+40, x-50, y);
    endShape(CLOSE);
 }
+
 
 
 
