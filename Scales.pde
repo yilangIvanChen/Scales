@@ -1,3 +1,5 @@
+/*
+
 void setup() {
   size(750, 750);
   background(80,50,50);
@@ -50,5 +52,19 @@ void eyelid(int x, int y){
    endShape(CLOSE);
 }
 
+*/
 
 
+void setup() {
+  size(400, 400);
+  background(167, 167, 167);
+  fill(0, 0, 0);
+}
+
+void draw () {
+  for(x = 0; x <= 400; x += 10) {
+    for (y = 0; y <= 400; y += 20) {
+      ellipse(x, y, 10, 10)
+    }
+  }
+}
