@@ -1,3 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Processing.js Sketch</title>
+    <script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script>
+  </head>
+  <body>
+    <canvas id="mycanvas"></canvas>
+
+    <script type="application/processing" data-processing-target="mycanvas">
+
+
 void setup() {
   size(750, 750);
   background(80,50,50);
@@ -52,6 +64,9 @@ void eyelid(int x, int y){
 
 
 
+</script>
+  </body>
+</html>
 
 
 
