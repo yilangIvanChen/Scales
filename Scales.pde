@@ -56,7 +56,7 @@ void eyelid(int x, int y){
 
 
 void setup() {
-  size(400, 400);
+  size(750, 750);
   background(167, 167, 167);
   fill(0, 0, 0);
 }
@@ -90,4 +90,5 @@ void eye(int x, int y){
   r-=255/21.0;
   }
 }
+
 
