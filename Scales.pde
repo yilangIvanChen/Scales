@@ -66,29 +66,17 @@ void draw () {
   int y = 0;
   for (y = 0; y <= 800; y+=50){
     for (x = 0; x <= 800; x+= 105){
-      eye(x+10,y);
+      strokeWeight(2.5);
+      fill(100,20,20);
+      beginShape();
+      vertex(x-50, y);
+      quadraticVertex(x, y-40, x+50, y);
+      quadraticVertex(x, y+40, x-50, y);
+      endShape(CLOSE);
     }
   }
 }
-void eye(int x, int y){
-  //sclera
-  strokeWeight(2.5);
-  fill(100,20,20);
-  beginShape();
-  vertex(x-50, y);
-  quadraticVertex(x, y-40, x+50, y);
-  quadraticVertex(x, y+40, x-50, y);
-  endShape(CLOSE);
-  //pupil
-  int diam = 0;
-  float r = 255;
-  noFill();
-  while(diam < 30){
-  stroke(r,r,r);
-  ellipse(x,y,diam,diam);
-  diam++;
-  r-=255/21.0;
-  }
 }
+
 
 
