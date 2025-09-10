@@ -58,24 +58,22 @@ void eyelid(int x, int y){
 void setup() {
   size(750, 750);
   background(167, 167, 167);
-  fill(0, 0, 0);
 }
 
 void draw () {
-  int x = 0;
-  int y = 0;
-  for (y = 0; y <= 800; y+=50){
-    for (x = 0; x <= 800; x+= 105){
-      strokeWeight(2.5);
-      fill(100,20,20);
-      beginShape();
-      vertex(x-50, y);
-      quadraticVertex(x, y-40, x+50, y);
-      quadraticVertex(x, y+40, x-50, y);
-      endShape(CLOSE);
+  int x = 250;
+  int y = 250;
+  strokeWeight(2.5);
+  fill(100,20,20);
+  beginShape();
+  vertex(x-50, y);
+  quadraticVertex(x, y-40, x+50, y);
+  quadraticVertex(x, y+40, x-50, y);
+  endShape(CLOSE);
     }
   }
 }
+
 
 
 
