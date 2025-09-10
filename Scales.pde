@@ -70,9 +70,8 @@ void draw () {
   quadraticVertex(x, y-40, x+50, y);
   quadraticVertex(x, y+40, x-50, y);
   endShape(CLOSE);
-    }
-  }
 }
+
 
 
 
