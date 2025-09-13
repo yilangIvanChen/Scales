@@ -1,6 +1,6 @@
 void setup() {
   size(500, 500);
-  background(255,(int)(Math.random()*256)+190,(int)(Math.random()*256)+190);
+  background(255,200,200);
   //noLoop();
 }
 void draw() {
@@ -12,7 +12,7 @@ void draw() {
   }
 }
 void scale(int x, int y) {//individual scales
-  fill(0,0,(int)(Math.random()*200)+165);
+  fill(0,0,180);
   beginShape();
   curveVertex(x+15,y);
   curveVertex(x+15,y);
@@ -22,11 +22,21 @@ void scale(int x, int y) {//individual scales
   curveVertex(x+15,y);
   curveVertex(x+15,y);
   endShape();
-  fill(0,sqrt((x-mouseX)^2+(y-mouseY)^2)*2,sqrt((x-mouseX)^2+(y-mouseY)^2)*2);
-  ellipse(x+mouseX/80,y+mouseY/80,11,11);
+    fill(sqrt((x-mouseX)^2+(y-mouseY)^2)*15,150,180);
+  if (mouseX >= 250 && mouseY >= 250){
+    ellipse(x+mouseX/65,y+mouseY/65,11,11);
+  }
+  else if (mouseX < 250 && mouseY >= 250){
+    ellipse(x-mouseX/65,y+mouseY/65,11,11);
+  }
+  else if (mouseX < 250 && mouseY < 250){
+    ellipse(x-mouseX/65,y-mouseY/65,11,11);
+  }
+  else{
+    ellipse(x+mouseX/65,y-mouseY/65,11,11);
+  }
 }
 void scaleTwo(int x,int y){//individual scales pt2
-  fill(255,255,sqrt((x-mouseX)^2+(y-mouseY)^2)*13.5);
+  fill(170,170,sqrt((x-mouseX)^2+(y-mouseY)^2)*15);
   ellipse(x+14,y+15,8,12);
 }
-//work in progess
